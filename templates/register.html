@@ -1,0 +1,73 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Register</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">	
+
+  </head>
+  <body>
+      
+	<div class="container" style="margin-left:35%;">
+       <div >
+		<h1 class="label">Account Creation</h1>
+
+        {% for message in messages %}
+        <p class="alert alert-danger">{{message}}</p>
+        {% endfor %}
+
+		<form class="login_form" action="register" method="post" name="form" onsubmit="return validated()">
+           {% csrf_token %}
+    	<div class="font">First Name</div>
+			<input autocomplete="off" type="text" name="name1" value={{name1}}>
+      <div id="email_error">Please Fill up your FirstName</div>
+      <div class="font">Second Name</div>
+			<input autocomplete="off" type="text" name="name2" value={{name2}}>
+      <div id="email_error">Please Fill up your SecondName</div>
+      <div class="font">National Identification</div>
+			<input autocomplete="off" type="number" name="id_no" value={{id_no}}>
+      <div id="email_error">Please Fill up your ID number</div>
+      <div class="font">County Of Residence</div>
+      <div id="email_error">Please Fill up your current County</div>
+
+			<input autocomplete="off" type="text" name="county" value={{county}}>
+			<div id="email_error">Please Fill up your Email </div>
+			<div class="font">Email</div>
+			<input autocomplete="off" type="text" name="email" value={{email}}>
+      <div id="email_error">Please Fill up your Email </div>
+
+     <div class="font"> Phone Number</div>
+			<input autocomplete="off" type="number" name="phone" value={{phone}}>
+			<div id="email_error">Please Fill up your  Phone number</div>
+			<div class="font font2">Password</div>
+			<input type="Password" name="password1" value={{pass1}}>
+			<div id="password_error">Please Fill up your password</div>
+      <div class="font font2">Password Re-entry</div>
+			<input type="Password" name="password2" value={{pass2}}>
+			<div id="password_error">Please Fill up your password Again</div>
+			<button type="submit">Register</button>
+			
+		</form>
+		
+	</div>
+    </div>
+	<script type="text/javascript" src="javascript.js">
+
+
+		
+	</script>
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

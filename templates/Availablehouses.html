@@ -1,0 +1,23 @@
+<body style="background-color:skyblue;">
+<div>
+
+    <h1>Available Houses</h1>
+    {%for item in all%}
+
+    House Name: {{item.name}}
+    </br>
+    House type:{{item.house_type}}
+    </br>
+    Price:Kshs.{{item.price}}
+    </br>
+
+    
+    location:{{item.location}}
+    </br>
+    
+    <a class="btn btn-success" href="booking" >Book Now</a>
+    <hr>
+    {%endfor%}
+
+    </div>
+</body>

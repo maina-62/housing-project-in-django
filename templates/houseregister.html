@@ -1,0 +1,36 @@
+ {% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>House Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+</head>
+
+<body style="background-image: url({% static 'images/back.jpg' %})">
+    <div class="container">
+        <h1 class="label">House Registration</h1>
+        <form class="customer_form" action="houseregister" method="post" name="form" onsubmit="return validated()">
+            {% csrf_token %}
+            <div class="font">House Name</div>
+            <input autocomplete="off" type="text" name="name">
+            <div class="font">House type</div>
+            <select type="scroll" name="house_type">
+				<option value="Double-room">Double</option>
+				<option value="single-room">single-room</option>
+				<option value="Self-contained">Self-contained</option>
+			</select>
+            <div class="font">House Location</div>
+            <input autocomplete="off" type="text" name="location">
+
+            <div class="font">House Price</div>
+            <input autocomplete="off" type="text" name="price">
+            <button type="submit">Register House</button>
+        </form>
+    </div>
+    <script type="text/javascript" src="javascript.js">
+    </script>
+
+</body>
+
+</html>

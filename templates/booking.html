@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>House Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="label">Tenant Renting Form</h1>
+
+        <form class="customer_form" action="booking" method="post" name="form" onsubmit="return validated()">
+            {% csrf_token %}
+            <div class="font">FirstName</div>
+            <input autocomplete="off" type="text" name="name1">
+
+            <div class="font">SecondName</div>
+            <input autocomplete="off" type="text" name="name2">
+
+            <div class="font"> Phone Number</div>
+            <input autocomplete="off" type="number" name="phone">
+
+            <div class="font">Your location</div>
+            <input autocomplete="off" type="text" name="location">
+
+
+            <div class="font">Amount To Pay</div>
+            <input autocomplete="off" type="text" name="amount">
+            <div class="font">Lipa na Mpesa </div>
+            <select type="scroll" name="payment_method">
+                <option value="lipa_na_mpesa">M-pesa</option>
+                <a href="apis.py"><button type="submit">pay</button></a>
+				
+			</select>
+
+
+            <div class="font">Email</div>
+            <input autocomplete="off" type="text" name="email">
+
+            <button type="submit">Book Now</button>
+
+
+
+        </form>
+
+    </div>
+    <script type="text/javascript" src="javascript.js">
+    </script>
+
+</body>
+
+</html>
